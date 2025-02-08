@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive HTML Page</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="brand">Brand Name</div>
+    <div class="hamburger" id="hamburger">
+        <i class="fas fa-bars"></i>
+    </div>
+    <ul class="nav-links" id="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li class="dropdown">
+            <a href="#services">Services <i class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown-menu">
+                <li><a href="#service1">Service 1</a></li>
+                <li><a href="#service2">Service 2</a></li>
+                <li><a href="#service3">Service 3</a></li>
+                <li><a href="#service4">Service 4</a></li>
+            </ul>
+        </li>
+        <li><a href="#connect" class="connect-btn">Let's Connect</a></li>
+    </ul>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero animate">
+    <div class="hero-content">
+        <h1><strong>Bold Word 1</strong> <strong>Bold Word 2</strong></h1>
+        <p>This is the first line of normal text.</p>
+        <p>This is the second line of normal text.</p>
+        <a href="#connect" class="connect-btn">Let's Connect</a>
+    </div>
+    <div class="hero-image">
+        <!-- Placeholder for an image -->
+    </div>
+</section>
+
+<!-- Additional Sections -->
+<section class="section animate" id="section1">
+    <h2>Section 1</h2>
+    <p>This is the content for section 1. It provides an overview of our services and how we can help you achieve your goals.</p>
+    <p>We specialize in delivering high-quality solutions tailored to your needs.</p>
+</section>
+
+<section class="section animate" id="section2">
+    <h2>Section 2</h2>
+    <p>This is the content for section 2. Here, we showcase our portfolio and success stories.</p>
+    <p>Our clients trust us to deliver innovative and reliable solutions.</p>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <p>&copy; 2023 Brand Name. All rights reserved.</p>
+</footer>
+
+<script src="/js/script.js"></script>
+</body>
+</html>
