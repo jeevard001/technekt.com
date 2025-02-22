@@ -48,32 +48,46 @@ body {
     position: relative;
 }
 
+/* Dropdown Menu Styles */
 .dropdown-menu {
     display: none;
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: #333;
+    background-color: #333 !important; /* Ensure it matches navbar */
     list-style: none;
     padding: 0;
     margin: 0;
     min-width: 150px;
     z-index: 1000;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: shadow for a cleaner look */
 }
 
+/* Ensure menu items are styled correctly */
 .dropdown-menu li {
-    padding: 0.5rem 1rem;
+    padding: 0;
 }
 
 .dropdown-menu a {
-    color: white;
+    color: white !important; /* Force white text */
     text-decoration: none;
     display: block;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s;
 }
 
-.dropdown:hover .dropdown-menu {
-    display: block;
+/* Change only the hovered item's background */
+.dropdown-menu a:hover {
+    background-color: #555 !important; /* Slightly lighter gray */
 }
+
+/* Ensure dropdown displays properly */
+.dropdown:hover .dropdown-menu {
+    display: block !important;
+}
+
+
 
 .connect-btn {
     background-color: #007BFF;
@@ -154,6 +168,60 @@ body {
     line-height: 1.6;
 }
 
+/* Our Expertise Section */
+#section1 {
+    background-color: #f8f9fa;
+    padding: 4rem 0;
+}
+
+#section1 h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.expertise-card {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 2rem;
+    text-decoration: none;
+    color: #333;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 180px; /* Adjusted height for all blocks */
+}
+
+.expertise-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.expertise-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #007BFF;
+    text-align: left;
+}
+
+.expertise-card p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.large-card {
+    flex: 1.8; /* Slightly reduced width for larger blocks */
+    margin-right: 8px; /* Small gap between blocks */
+}
+
+.small-card {
+    flex: 1; /* Smaller block takes 1/3 of the row */
+    margin-left: 8px; /* Small gap between blocks */
+}
+
 /* Footer Styles */
 .footer {
     text-align: center;
@@ -199,5 +267,11 @@ body {
     .hero-image {
         width: 100%;
         margin-top: 1rem;
+    }
+
+    .expertise-card {
+        width: 100% !important; /* Full width on mobile */
+        height: auto !important; /* Auto height on mobile */
+        margin: 8px 0 !important; /* Add vertical spacing */
     }
 }
