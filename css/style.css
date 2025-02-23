@@ -4,6 +4,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
 /* Navbar Styles */
@@ -11,22 +12,23 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
-    background-color: #333;
+    padding: 0.5rem 2rem; /* Reduced top/bottom padding to make it more compact */
+    background-color: #333 !important; /* Ensure background color is applied */
     color: white;
-    position: fixed; /* Use fixed to make the navbar sticky */
+    position: fixed !important; /* Ensure the navbar is fixed */
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000;
+    z-index: 1000; /* Ensure it stays above other content */
 }
 
-.brand {
-    font-size: 1.5rem;
+.navbar .brand {
+    font-size: 1.25rem; /* Slightly reduced font size for the brand */
     font-weight: bold;
+    color: white !important; /* Ensure brand text color is white */
 }
 
-.nav-links {
+.navbar .nav-links {
     list-style: none;
     display: flex;
     gap: 1rem;
@@ -34,30 +36,31 @@ body {
     padding: 0;
 }
 
-.nav-links a {
-    color: white;
+.navbar .nav-links a {
+    color: white !important; /* Ensure link text color is white */
     text-decoration: none;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 1rem; /* Adjust padding for links if needed */
     transition: background-color 0.3s;
+    font-size: 0.9rem; /* Slightly reduced font size for links */
 }
 
-.nav-links a:hover {
-    background-color: #555;
+.navbar .nav-links a:hover {
+    background-color: #555 !important; /* Ensure hover background color is applied */
     border-radius: 4px;
 }
 
-.dropdown {
+.navbar .dropdown {
     position: relative;
 }
 
-.dropdown-menu {
+.navbar .dropdown-menu {
     display: none;
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: #444; /* Slightly lighter background for dropdown */
+    background-color: #444 !important; /* Ensure dropdown background color is applied */
     list-style: none;
-    padding: 0.5rem 0; /* Add padding for better spacing */
+    padding: 0.5rem 0;
     margin: 0;
     min-width: 150px;
     z-index: 1000;
@@ -65,79 +68,60 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.dropdown-menu li {
+.navbar .dropdown-menu li {
     padding: 0;
 }
 
-.dropdown-menu a {
-    color: white; /* Ensure text is white */
+.navbar .dropdown-menu a {
+    color: white !important; /* Ensure dropdown text color is white */
     text-decoration: none;
     display: block;
     padding: 0.5rem 1rem;
     transition: background-color 0.3s;
+    font-size: 0.9rem; /* Slightly reduced font size for dropdown links */
 }
 
-.dropdown-menu a:hover {
-    background-color: #555; /* Hover effect for dropdown items */
-    color: white;
+.navbar .dropdown-menu a:hover {
+    background-color: #555 !important; /* Ensure dropdown hover background color is applied */
+    color: white !important;
 }
 
-.dropdown:hover .dropdown-menu {
+.navbar .dropdown:hover .dropdown-menu {
     display: block;
 }
 
-.connect-btn {
-    background-color: #007BFF;
+.navbar .connect-btn {
+    background-color: #007BFF !important; /* Ensure button background color is applied */
     border-radius: 4px;
-    padding: 0.5rem 1rem;
-    color: white;
+    padding: 0.5rem 1rem; /* Adjust padding for the button if needed */
+    color: white !important; /* Ensure button text color is white */
     text-decoration: none;
     transition: background-color 0.3s;
+    display: inline-block; /* Ensure it behaves like a button */
+    border: none; /* Remove default border */
+    cursor: pointer; /* Add pointer cursor */
+    font-size: 0.9rem; /* Slightly reduced font size for the button */
 }
 
-.connect-btn:hover {
-    background-color: #0056b3;
+.navbar .connect-btn:hover {
+    background-color: #0056b3 !important; /* Ensure button hover background color is applied */
 }
 
-.hamburger {
+.navbar .hamburger {
     display: none;
-    font-size: 1.5rem;
+    font-size: 1.25rem; /* Slightly reduced font size for the hamburger icon */
     cursor: pointer;
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: row;
-        align-items: center;
-    }
-
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background-color: #333;
-        position: absolute;
-        top: 100%;
-        left: 0;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .hamburger {
-        display: block;
-    }
+    color: white !important; /* Ensure hamburger icon color is white */
 }
 
 /* Hero Section Styles */
 .hero {
     position: relative;
-    height: 550px;
+    height: 650px;
     display: flex;
     align-items: center;
     padding: 2rem;
+    padding-top: 100px; /* Add padding-top to account for the fixed navbar */
     overflow: hidden;
 }
 
@@ -157,7 +141,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.388);
 }
 
 .hero-content {
@@ -180,6 +164,24 @@ body {
 .hero-content p {
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
+}
+
+.hero .connect-btn {
+    background-color: #007BFF !important; /* Ensure button background color is applied */
+    border-radius: 4px;
+    padding: 0.75rem 1.5rem; /* Slightly larger padding for hero button */
+    color: white !important; /* Ensure button text color is white */
+    text-decoration: none;
+    transition: background-color 0.3s;
+    display: inline-block; /* Ensure it behaves like a button */
+    border: none; /* Remove default border */
+    cursor: pointer; /* Add pointer cursor */
+    font-size: 1.1rem; /* Slightly larger font size for hero button */
+    margin-top: 1rem; /* Add some margin for spacing */
+}
+
+.hero .connect-btn:hover {
+    background-color: #0056b3 !important; /* Ensure button hover background color is applied */
 }
 
 /* Section Styles */
@@ -364,7 +366,7 @@ body {
 
 /* Let's Connect & Grow Section */
 #connect {
-    background-color: #f8f9fa;
+    background-color: #ffffff;
     padding: 4rem 0;
 }
 
