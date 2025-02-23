@@ -1,19 +1,38 @@
 document.addEventListener("DOMContentLoaded", function () {
     const animatedElements = document.querySelectorAll(".animate");
+    const expertiseCards = document.querySelectorAll(".expertise-card");
+    const aboutContents = document.querySelectorAll(".about-content");
     const hamburger = document.getElementById("hamburger");
     const navLinks = document.getElementById("nav-links");
 
-    // Scroll animation
+    // Scroll animation for all animated elements
     function checkScroll() {
+        // Animate .animate elements
         animatedElements.forEach(el => {
             const rect = el.getBoundingClientRect();
             if (rect.top < window.innerHeight - 50) {
                 el.classList.add("show");
             }
         });
+
+        // Animate .about-content sections
+        aboutContents.forEach(content => {
+            const rect = content.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 50) {
+                content.classList.add("show");
+            }
+        });
+
+        // Animate .expertise-card blocks
+        expertiseCards.forEach(card => {
+            const rect = card.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 50) {
+                card.classList.add("show");
+            }
+        });
     }
 
-    // Hamburger toggle
+    // Hamburger toggle for mobile menu
     hamburger.addEventListener("click", () => {
         navLinks.classList.toggle("active");
     });
@@ -30,16 +49,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Keep dropdown open when hovering
     const dropdown = document.querySelector(".dropdown");
-    dropdown.addEventListener("mouseenter", () => {
-        const dropdownMenu = dropdown.querySelector(".dropdown-menu");
-        dropdownMenu.style.display = "block";
-    });
+    if (dropdown) {
+        dropdown.addEventListener("mouseenter", () => {
+            const dropdownMenu = dropdown.querySelector(".dropdown-menu");
+            dropdownMenu.style.display = "block";
+        });
 
-    dropdown.addEventListener("mouseleave", () => {
-        const dropdownMenu = dropdown.querySelector(".dropdown-menu");
-        dropdownMenu.style.display = "none";
-    });
+        dropdown.addEventListener("mouseleave", () => {
+            const dropdownMenu = dropdown.querySelector(".dropdown-menu");
+            dropdownMenu.style.display = "none";
+        });
+    }
 
+    // Initial scroll check and event listener for scroll
     window.addEventListener("scroll", checkScroll);
     checkScroll();
 });

@@ -3,7 +3,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 
 /* Navbar Styles */
@@ -14,11 +14,11 @@ body {
     padding: 1rem 2rem;
     background-color: #333;
     color: white;
-    position: fixed; /* Make the navbar fixed */
-    top: 0; /* Stick to the top */
-    left: 0; /* Align to the left */
-    width: 100%; /* Full width */
-    z-index: 1000; /* Ensure it's above other content */
+    position: fixed; /* Use fixed to make the navbar sticky */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 .brand {
@@ -50,43 +50,40 @@ body {
     position: relative;
 }
 
-/* Dropdown Menu Styles */
 .dropdown-menu {
     display: none;
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: #333 !important; /* Ensure it matches navbar */
+    background-color: #444; /* Slightly lighter background for dropdown */
     list-style: none;
-    padding: 0;
+    padding: 0.5rem 0; /* Add padding for better spacing */
     margin: 0;
     min-width: 150px;
     z-index: 1000;
     border-radius: 4px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: shadow for a cleaner look */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Ensure menu items are styled correctly */
 .dropdown-menu li {
     padding: 0;
 }
 
 .dropdown-menu a {
-    color: white !important; /* Force white text */
+    color: white; /* Ensure text is white */
     text-decoration: none;
     display: block;
     padding: 0.5rem 1rem;
     transition: background-color 0.3s;
 }
 
-/* Change only the hovered item's background */
 .dropdown-menu a:hover {
-    background-color: #555 !important; /* Slightly lighter gray */
+    background-color: #555; /* Hover effect for dropdown items */
+    color: white;
 }
 
-/* Ensure dropdown displays properly */
 .dropdown:hover .dropdown-menu {
-    display: block !important;
+    display: block;
 }
 
 .connect-btn {
@@ -108,14 +105,40 @@ body {
     cursor: pointer;
 }
 
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #333;
+        position: absolute;
+        top: 100%;
+        left: 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
+
 /* Hero Section Styles */
 .hero {
     position: relative;
-    height: 550px; /* Reduced height for hero section */
+    height: 550px;
     display: flex;
     align-items: center;
     padding: 2rem;
-    overflow: hidden; /* Ensure the image doesn't overflow */
+    overflow: hidden;
 }
 
 .hero-image {
@@ -124,8 +147,8 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensure the image covers the entire hero section */
-    z-index: -1; /* Place the image behind the content */
+    object-fit: cover;
+    z-index: -1;
 }
 
 .hero-overlay {
@@ -134,13 +157,13 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    /* background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .hero-content {
     position: relative;
     z-index: 1;
-    text-align: left; /* Align text to the left */
+    text-align: left;
     color: white;
     max-width: 50%;
 }
@@ -151,7 +174,7 @@ body {
 }
 
 .hero-content h1 strong {
-    color: #007BFF; /* Highlight bold words */
+    color: #007BFF;
 }
 
 .hero-content p {
@@ -194,46 +217,148 @@ body {
     margin-bottom: 2rem;
 }
 
+/* Our Expertise Section */
 .expertise-card {
     display: flex;
     align-items: center;
+    justify-content: center;
     background-color: #ffffff;
     border-radius: 10px;
     padding: 2rem;
     text-decoration: none;
     color: #333;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 180px; /* Adjusted height for all blocks */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 1s;
+    height: 180px;
+    position: relative;
+    overflow: hidden; /* Ensure the background image doesn't overflow */
 }
 
-.expertise-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+.expertise-card .card-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+/* Shaded overlay for the background image */
+.expertise-card .card-bg::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+    z-index: 2;
+}
+
+.expertise-card:hover .card-bg::after {
+    background-color: rgba(0, 0, 0, 0.3); /* Lighter overlay on hover */
+}
+
+.expertise-card .card-body {
+    position: relative;
+    z-index: 3; /* Ensure text is above the background image and overlay */
+    text-align: center;
 }
 
 .expertise-card h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: #007BFF;
-    text-align: left;
+    color: #fff; /* White text for better contrast */
 }
 
 .expertise-card p {
     font-size: 1rem;
-    color: #666;
+    color: #fff; /* White text for better contrast */
     line-height: 1.6;
-    text-align: left;
 }
 
+/* Animation for each block */
+.expertise-card {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s, transform 1s, box-shadow 0.3s ease;
+}
+
+.expertise-card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hover effect for expertise cards */
+.expertise-card:hover {
+    transform: translateY(0) scale(1.05); /* Combine scroll animation and hover effect */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+}
+
+/* Large and small card adjustments */
 .large-card {
-    flex: 1.8; /* Slightly reduced width for larger blocks */
-    margin-right: 8px; /* Small gap between blocks */
+    flex: 1.8;
+    margin-right: 8px;
 }
 
 .small-card {
-    flex: 1; /* Smaller block takes 1/3 of the row */
-    margin-left: 8px; /* Small gap between blocks */
+    flex: 1;
+    margin-left: 8px;
+}
+
+/* About Us Section */
+#about h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+#about h3 {
+    font-size: 2rem;
+    color: #007BFF;
+    margin-bottom: 1rem;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+.about-text {
+    flex: 1;
+    padding: 2rem;
+}
+
+.about-image {
+    flex: 1;
+    padding: 2rem;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.left {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 1s, transform 1s;
+}
+
+.right {
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 1s, transform 1s;
+}
+
+.about-content.show .left,
+.about-content.show .right {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 /* Footer Styles */
@@ -279,8 +404,16 @@ body {
     }
 
     .expertise-card {
-        width: 100% !important; /* Full width on mobile */
-        height: auto !important; /* Auto height on mobile */
-        margin: 8px 0 !important; /* Add vertical spacing */
+        width: 100%;
+        height: auto;
+        margin: 8px 0;
+    }
+
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about-text, .about-image {
+        padding: 1rem;
     }
 }
