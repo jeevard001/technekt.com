@@ -65,3 +65,34 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("scroll", checkScroll);
     checkScroll();
 });
+
+
+
+// form mail action js
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("connectForm");
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault(); // Prevent default form submission
+
+        // Submit form using Fetch API
+        fetch(form.action, {
+            method: "POST",
+            body: new FormData(form),
+            headers: {
+                Accept: "application/json",
+            },
+        })
+            .then((response) => {
+                if (response.ok) {
+                    alert("Thank you! We'll get back to you soon.");
+                    form.reset(); // Reset the form
+                } else {
+                    alert("Oops! Something went wrong. Please try again.");
+                }
+            })
+            .catch((error) => {
+                alert("Oops! Something went wrong. Please try again.");
+            });
+    });
+});

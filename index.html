@@ -121,10 +121,115 @@
     </div>
 </section>
 
+
+<!-- Let's Connect & Grow Section -->
+<section class="section animate" id="connect">
+    <div class="container">
+        <h2 class="text-center mb-5">Let's Connect & Grow</h2>
+
+        <!-- First Row: Full-width Image -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <div class="connect-image">
+                    <img src="images/meeting.png" alt="How We Connect" class="img-fluid">
+                </div>
+            </div>
+        </div>
+
+        <!-- Second Row: Description and Form -->
+        <div class="row">
+            <!-- Left Part: What Happens -->
+            <div class="col-md-6 mb-4">
+                <h3>What Happens When You Fill This Form?</h3>
+                <p>
+                    By filling out this form, you’ll get a complimentary consultation with our experts. We’ll discuss your project, understand your goals, and provide tailored solutions to help your business grow.
+                </p>
+            </div>
+
+            <!-- Right Part: Form -->
+            <div class="col-md-6 mb-4">
+                <form id="connectForm" action="https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT" method="POST">
+                    <div class="mb-3">
+                        <label for="firstName" class="form-label">First Name*</label>
+                        <input type="text" class="form-control" id="firstName" name="firstName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="lastName" class="form-label">Last Name*</label>
+                        <input type="text" class="form-control" id="lastName" name="lastName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email*</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="companyName" class="form-label">Company Name*</label>
+                        <input type="text" class="form-control" id="companyName" name="companyName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="projectDetails" class="form-label">Tell us more about your application*</label>
+                        <textarea class="form-control" id="projectDetails" name="projectDetails" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
     <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2023 Brand Name. All rights reserved.</p>
-    </footer>
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <!-- First Column: Company Name and Navbar Contents -->
+            <div class="col-md-3 mb-4">
+                <h5>Company Name</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#technologies">Technologies</a></li>
+                    <li><a href="#careers">Careers</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Second Column: Locations -->
+            <div class="col-md-3 mb-4">
+                <h5>Locations</h5>
+                <ul class="list-unstyled">
+                    <li>Germany</li>
+                    <li>India</li>
+                </ul>
+            </div>
+
+            <!-- Third Column: For Further Queries and Careers -->
+            <div class="col-md-3 mb-4">
+                <h5>Connect With Us</h5>
+                <p>For further queries and careers:</p>
+                <p><a href="mailto:connect@example.com">connect@example.com</a></p>
+            </div>
+
+            <!-- Fourth Column: Social Media -->
+            <div class="col-md-3 mb-4">
+                <h5>Follow Us</h5>
+                <ul class="list-unstyled list-inline">
+                    <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li class="list-inline-item"><a href="#"><i class="fab fa-facebook"></i></a></li>
+                    <li class="list-inline-item"><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Copyright Notice -->
+        <div class="row">
+            <div class="col-12 text-center">
+                <p class="mb-0">Copyright © 2024 Company Name. All Rights Reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>
 
     <script src="js/script.js"></script>
 </body>
