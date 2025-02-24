@@ -45,6 +45,13 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+    // Close the navbar when a link is clicked
+    navLinks.addEventListener('click', function(event) {
+        if (event.target.tagName === 'A') {
+            navLinks.classList.remove('active');
+        }
+    });
+
     // Keep dropdown open when hovering
     const dropdown = document.querySelector(".dropdown");
     if (dropdown) {

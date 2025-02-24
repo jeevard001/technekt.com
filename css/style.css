@@ -1,4 +1,8 @@
 /* General Styles */
+html {
+    overflow-x: hidden;
+    /* width: 100%; */
+}
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -112,6 +116,7 @@ body {
 @media (max-width: 768px) {
     .navbar {
         padding: 0.5rem 1rem; /* Compact padding for mobile */
+        flex-wrap: wrap; /* Allow wrapping for mobile */
     }
 
     .navbar .nav-links {
@@ -539,7 +544,7 @@ body {
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-    .navbar {
+    /* .navbar {
         flex-direction: row;
         align-items: center;
     }
@@ -556,7 +561,7 @@ body {
 
     .nav-links.active {
         display: flex;
-    }
+    } */
 
     .hamburger {
         display: block;
