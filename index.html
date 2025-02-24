@@ -34,13 +34,16 @@
 </nav>
 
 <!-- Hero Section -->
-<section class="hero animate" id="hero">
+<section class="hero" id="hero">
     <img src="images/office.jpg" alt="Hero Image" class="hero-image">
     <div class="hero-overlay"></div>
     <div class="hero-content">
-        <h1>Welcome to <strong>B&J's Company</strong></h1>
-        <p>This is a placeholder for your hero section description.</p>
-        <a href="#connect" class="hero-connect-btn">Let's Connect</a>
+        <h1 class="hero-title">Welcome to <strong>B&J's Company</strong></h1>
+        <p class="hero-subtitle">Your journey to excellence starts here.</p>
+        <div class="hero-buttons">
+            <a href="#connect" class="hero-cta primary">Let's Connect</a>
+            <a href="#about" class="hero-cta secondary">Learn More</a>
+        </div>
     </div>
 </section>
 
@@ -234,5 +237,14 @@
 </footer>
 
     <script src="js/script.js"></script>
+
+    <script>
+        // Hero Parallax Effect
+        document.addEventListener("scroll", function () {
+            const heroImage = document.querySelector(".hero-image");
+            const scrollPosition = window.scrollY;
+            heroImage.style.transform = `translateY(${scrollPosition * 0.5}px)`; /* Parallax effect */
+        });
+    </script>
 </body>
 </html>
