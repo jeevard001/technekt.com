@@ -21,7 +21,7 @@
         <li class="dropdown">
             <a href="#services">Our Expertise <i class="fas fa-chevron-down"></i></a>
             <ul class="dropdown-menu">
-                <li><a href="#service1">Service 1</a></li>
+                <li><a href="expertise/softwareDev.html">Service 1</a></li>
                 <li><a href="#service2">Service 2</a></li>
                 <li><a href="#service3">Service 3</a></li>
                 <li><a href="#service4">Service 4</a></li>
@@ -54,7 +54,7 @@
         <div class="row">
             <!-- Block 1 (Large) -->
             <div class="col-md-8 mb-4">
-                <a href="#service1" class="expertise-card large-card">
+                <a href="expertise/softwareDev.html" class="expertise-card large-card">
                     <div class="card-bg" style="background-image: url('images/office.jpg');"></div>
                     <div class="card-body">
                         <h3>Service 1</h3>
@@ -182,8 +182,7 @@
 </section>
 
 
-
-    <!-- Footer -->
+<!-- Footer -->
 <footer class="footer">
     <div class="container">
         <div class="row">
@@ -193,10 +192,7 @@
                 <ul class="list-unstyled">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About Us</a></li>
-                    <li><a href="#section1">Services</a></li>
-                    <!-- <li><a href="#technologies">Technologies</a></li>
-                    <li><a href="#careers">Careers</a></li>
-                    <li><a href="#contact">Contact</a></li> -->
+                    <li><a href="#services">Services</a></li>
                 </ul>
             </div>
 
@@ -209,22 +205,42 @@
                 </ul>
             </div>
 
-            <!-- Third Column: For Further Queries and Careers -->
+            <!-- Third Column: Quick Links -->
             <div class="col-md-3 mb-4">
-                <h5>Connect With Us</h5>
-                <p>For further queries and careers:</p>
-                <p><a href="mailto:connect@example.com">connect@example.com</a></p>
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#privacy-policy">Privacy Policy</a></li>
+                    <li><a href="#terms-of-service">Terms of Service</a></li>
+                    <li><a href="#careers">Careers</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
             </div>
 
             <!-- Fourth Column: Social Media -->
             <div class="col-md-3 mb-4">
                 <h5>Follow Us</h5>
-                <ul class="list-unstyled list-inline">
-                    <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
-                    <li class="list-inline-item"><a href="#"><i class="fab fa-facebook"></i></a></li>
-                    <li class="list-inline-item"><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                <ul class="list-unstyled list-inline social-media">
+                    <li class="list-inline-item">
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    </li>
                 </ul>
             </div>
+        </div>
+
+        <!-- Back to Top Button -->
+        <div class="text-center mt-4">
+            <a href="#hero" class="back-to-top">
+                <i class="fas fa-arrow-up"></i> Back to Top
+            </a>
         </div>
 
         <!-- Copyright Notice -->
@@ -244,6 +260,16 @@
             const heroImage = document.querySelector(".hero-image");
             const scrollPosition = window.scrollY;
             heroImage.style.transform = `translateY(${scrollPosition * 0.5}px)`; /* Parallax effect */
+        });
+    </script>
+    <script>
+    // Smooth scroll for Back-to-Top button
+        document.querySelector('.back-to-top').addEventListener('click', function (e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
     </script>
 </body>
