@@ -1,38 +1,43 @@
-/* General Styles */
-html {
-    overflow-x: hidden;
-    /* width: 100%; */
-}
-body {
-    font-family: Arial, sans-serif;
+/* General Reset */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow-x: hidden; /* Prevent horizontal overflow */
 }
+
+body, html {
+    font-family: 'Poppins', sans-serif; /* Standard font */
+    overflow-x: hidden;
+    scroll-behavior: smooth; /* Smooth scrolling */
+    scroll-padding-top: 80px; /* Prevent navbar overlap */
+}
+
 
 /* Navbar Styles */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.75rem 2rem; /* Compact padding */
-    background-color: #333;
-    color: white;
-    position: fixed !important;  /* Ensure the navbar is fixed */
-    top: 0;
-    left: 0;
+    padding: 1rem 2rem; /* Slightly larger padding */
+    background-color: white; /* White background */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    position: fixed !important; /* Fixed position */
     width: 100%;
-    z-index: 1000; /* Ensure it stays above other content */
+    z-index: 1000;
 }
 
-.navbar .brand {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: white;
+/* Brand/Logo */
+.brand {
+    margin-left: 20px; /* Space from the left edge */
 }
 
-.navbar .nav-links {
+.logo-img {
+    height: 35px; /* Adjust based on your logo size */
+    width: auto; /* Maintain aspect ratio */
+}
+
+/* Nav Links */
+.nav-links {
     list-style: none;
     display: flex;
     gap: 1.5rem;
@@ -40,29 +45,30 @@ body {
     padding: 0;
 }
 
-.navbar .nav-links a {
-    color: white;
+.nav-links a {
+    color: #333; /* Dark text for contrast */
     text-decoration: none;
     padding: 0.5rem 1rem;
-    transition: background-color 0.3s;
-    font-size: 1rem;
+    transition: color 0.3s ease;
+    font-size: 1.1rem; /* Slightly larger font size */
+    font-weight: 500; /* Medium font weight */
 }
 
-.navbar .nav-links a:hover {
-    background-color: #555;
-    border-radius: 4px;
+.nav-links a:hover {
+    color: #6a11cb; /* Gradient color for hover */
 }
 
-.navbar .dropdown {
+/* Dropdown Menu */
+.dropdown {
     position: relative;
 }
 
-.navbar .dropdown-menu {
+.dropdown-menu {
     display: none;
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: #444;
+    background-color: white;
     list-style: none;
     padding: 0.5rem 0;
     margin: 0;
@@ -72,95 +78,122 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.navbar .dropdown-menu li {
+.dropdown-menu li {
     padding: 0;
 }
 
-.navbar .dropdown-menu a {
-    color: white;
+.dropdown-menu a {
+    color: #333;
     text-decoration: none;
     display: block;
     padding: 0.5rem 1rem;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease;
+    font-size: 1rem; /* Consistent font size */
 }
 
-.navbar .dropdown-menu a:hover {
-    background-color: #555;
+.dropdown-menu a:hover {
+    background-color: #f9f9f9; /* Light hover background */
 }
 
-.navbar .dropdown:hover .dropdown-menu {
+.dropdown:hover .dropdown-menu {
     display: block;
 }
 
-.navbar .nav-connect-btn {
-    background-color: #007BFF;
+
+/* Let's Connect Button */
+.nav-connect-btn {
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient color */
     border-radius: 4px;
-    padding: 0.5rem 1rem;
-    color: white;
+    padding: 0.5rem 1.5rem; /* Slightly larger padding */
+    color: white !important; /* Force white text color */
     text-decoration: none;
-    transition: background-color 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    font-size: 1.1rem; /* Slightly larger font size */
+    font-weight: 500; /* Medium font weight */
+    position: relative; /* For pseudo-element */
+    overflow: hidden; /* Ensure gradient doesn't overflow */
+    border: none; /* Remove default button border */
 }
 
-.navbar .nav-connect-btn:hover {
-    background-color: #0056b3;
+/* Hover Effect */
+.nav-connect-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(106, 17, 203, 0.3);
+    background: linear-gradient(135deg, #2575fc, #6a11cb); /* Reverse gradient on hover */
 }
 
-.navbar .hamburger {
+/* Ensure text remains white and visible */
+.nav-connect-btn span {
+    position: relative;
+    z-index: 2; /* Ensure text is above the gradient */
+}
+
+/* Hamburger Menu (Mobile) */
+.hamburger {
     display: none;
     font-size: 1.5rem;
     cursor: pointer;
-    color: white;
+    color: #6a11cb; /* Gradient color for hamburger */
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient background */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    transition: color 0.3s ease;
+}
+
+.hamburger:hover {
+    color: #2575fc; /* Change color on hover */
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
     .navbar {
-        padding: 0.5rem 1rem; /* Compact padding for mobile */
-        flex-wrap: wrap; /* Allow wrapping for mobile */
+        padding: 0.75rem 1rem; /* Slightly larger padding for mobile */
     }
 
-    .navbar .nav-links {
+    .logo-img {
+        height: 25px; /* Slightly smaller logo for mobile */
+    }
+
+    .nav-links {
         display: none;
         flex-direction: column;
         width: 100%;
-        background-color: #333;
+        background-color: white;
         position: absolute;
         top: 100%;
         left: 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
-    .navbar .nav-links.active {
+    .nav-links.active {
         display: flex;
     }
 
-    .navbar .hamburger {
+    .hamburger {
         display: block;
+    }
+
+    .dropdown-menu {
+        position: static;
+        box-shadow: none;
     }
 }
 
 
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body, html {
-    font-family: 'Arial', sans-serif;
-    overflow-x: hidden;
-}
 
 /* Hero Section */
 .hero {
     position: relative;
-    height: 100vh;
+    height: 80vh;
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
+    justify-content: flex-start; /* Align content to the left */
+    text-align: left; /* Left-align text */
+    color: #333; /* Dark text for contrast */
     overflow: hidden;
+    padding: 0 5%; /* Add padding to the sides */
+    padding-top: 100px; /* Increased padding for navbar */
 }
 
 .hero-image {
@@ -173,21 +206,14 @@ body, html {
     z-index: -1;
 }
 
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.292), rgba(0, 0, 0, 0.8)); /* Gradient overlay */
-    z-index: 1;
-}
-
 .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 800px;
+    max-width: 600px; /* Limit width for better readability */
     padding: 2rem;
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     animation: fadeIn 1.5s ease-out;
 }
 
@@ -195,22 +221,28 @@ body, html {
     font-size: 3.5rem;
     margin-bottom: 1rem;
     animation: slideInLeft 1.5s ease-out;
+    line-height: 1.2; /* Improve line spacing */
+    color: #333; /* Dark text for contrast */
 }
 
 .hero-title strong {
-    color: #007BFF; /* Highlight the company name */
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient text */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
 .hero-subtitle {
     font-size: 1.5rem;
     margin-bottom: 2rem;
     animation: slideInRight 1.5s ease-out;
+    color: #555; /* Subdued text color */
 }
 
 .hero-buttons {
     display: flex;
     gap: 1rem;
-    justify-content: center;
+    justify-content: flex-start; /* Align buttons to the left */
     flex-wrap: wrap;
 }
 
@@ -220,28 +252,26 @@ body, html {
     color: white;
     text-decoration: none;
     border-radius: 4px;
-    transition: background-color 0.3s, transform 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .hero-cta.primary {
-    background-color: #007BFF;
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient button */
 }
 
 .hero-cta.secondary {
-    background-color: transparent;
-    border: 2px solid #007BFF;
+    background: transparent;
+    border: 2px solid #6a11cb;
+    color: #6a11cb;
 }
 
 .hero-cta:hover {
     transform: translateY(-5px); /* Button hover effect */
-}
-
-.hero-cta.primary:hover {
-    background-color: #0056b3;
+    box-shadow: 0 4px 15px rgba(106, 17, 203, 0.3);
 }
 
 .hero-cta.secondary:hover {
-    background-color: #007BFF;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
     color: white;
 }
 
@@ -279,6 +309,12 @@ body, html {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .hero {
+        padding-top: 100px !important; /* Increased padding for mobile navbar */
+        padding: 0 2rem; /* Reduce side padding */
+        height: 70vh; /* Adjust height for mobile */
+    }
+
     .hero-title {
         font-size: 2.5rem;
     }
@@ -291,30 +327,16 @@ body, html {
         padding: 0.5rem 1rem;
         font-size: 0.9rem;
     }
+
+    .hero-content {
+        padding: 1.5rem; /* Reduce padding for mobile */
+    }
 }
 
-/* Section Styles */
-.section {
-    padding: 4rem 2rem;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 1s, transform 1s;
-}
 
-.section.show {
-    opacity: 1;
-    transform: translateY(0);
-}
 
-.section h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
 
-.section p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-}
+
 
 /* Our Expertise Section */
 #section1 {
@@ -326,9 +348,14 @@ body, html {
     font-size: 2.5rem;
     color: #333;
     margin-bottom: 2rem;
+    text-align: center;
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient text */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
-/* Our Expertise Section */
+/* Expertise Cards */
 .expertise-card {
     display: flex;
     align-items: center;
@@ -337,10 +364,10 @@ body, html {
     border-radius: 10px;
     padding: 2rem;
     text-decoration: none;
-    color: #00ccff9e;
+    color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 1s;
-    height: 180px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.5s ease; /* Faster animation */
+    height: 220px;
     position: relative;
     overflow: hidden; /* Ensure the background image doesn't overflow */
 }
@@ -364,37 +391,41 @@ body, html {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+    background-color: rgba(0, 0, 0, 0.6); /* Darker overlay for better contrast */
     z-index: 2;
+    transition: background-color 0.3s ease;
 }
 
 .expertise-card:hover .card-bg::after {
-    background-color: rgba(0, 0, 0, 0.3); /* Lighter overlay on hover */
+    background-color: rgba(0, 0, 0, 0.4); /* Lighter overlay on hover */
 }
 
 .expertise-card .card-body {
     position: relative;
     z-index: 3; /* Ensure text is above the background image and overlay */
     text-align: center;
+    transition: transform 0.3s ease;
 }
 
 .expertise-card h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     color: #fff; /* White text for better contrast */
+    transition: color 0.3s ease;
 }
 
 .expertise-card p {
     font-size: 1rem;
-    color: #fff; /* White text for better contrast */
+    color: rgba(255, 255, 255, 0.9); /* Semi-transparent white text */
     line-height: 1.6;
+    transition: color 0.3s ease;
 }
 
 /* Animation for each block */
 .expertise-card {
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 1s, transform 1s, box-shadow 0.3s ease;
+    transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s ease; /* Faster animation */
 }
 
 .expertise-card.show {
@@ -404,8 +435,20 @@ body, html {
 
 /* Hover effect for expertise cards */
 .expertise-card:hover {
-    transform: translateY(0) scale(1.05); /* Combine scroll animation and hover effect */
+    transform: translateY(-10px); /* Lift card on hover */
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+}
+
+.expertise-card:hover .card-body {
+    transform: scale(1.05); /* Slightly scale up content on hover */
+}
+
+.expertise-card:hover h3 {
+    color: #fff; /* Ensure text remains white on hover */
+}
+
+.expertise-card:hover p {
+    color: rgba(255, 255, 255, 1); /* Make text fully opaque on hover */
 }
 
 /* Large and small card adjustments */
@@ -418,6 +461,42 @@ body, html {
     flex: 1;
     margin-left: 8px;
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #section1 h2 {
+        font-size: 2rem;
+    }
+
+    .expertise-card {
+        height: 180px; /* Reduce height for mobile */
+        padding: 1.5rem; /* Reduce padding for mobile */
+    }
+
+    .expertise-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .expertise-card p {
+        font-size: 0.9rem;
+    }
+
+    .large-card,
+    .small-card {
+        flex: 1; /* Make all cards equal width on mobile */
+        margin: 0 0 1rem 0; /* Adjust margins for mobile */
+    }
+}
+
+
+
+
+
+
+
+
+
+
 
 /* About Us Section */
 #about h2 {
@@ -471,6 +550,13 @@ body, html {
     opacity: 1;
     transform: translateX(0);
 }
+
+
+
+
+
+
+
 
 
 /* Let's Connect & Grow Section */
