@@ -100,7 +100,7 @@ body, html {
 }
 
 
-/* Let's Connect Button */
+/* Let's Connect Button -> for nav*/
 .nav-connect-btn {
     background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient color */
     border-radius: 4px;
@@ -139,6 +139,7 @@ body, html {
     background-clip: text;
     color: transparent;
     transition: color 0.3s ease;
+    padding-right: 10px;
 }
 
 .hamburger:hover {
@@ -494,22 +495,24 @@ body, html {
 
 
 
-
-
-
-
 /* About Us Section */
 #about h2 {
     font-size: 2.5rem;
-    color: #333;
     margin-bottom: 2rem;
     text-align: center;
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient text */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
 #about h3 {
     font-size: 2rem;
-    color: #007BFF;
     margin-bottom: 1rem;
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient text */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
 .about-content {
@@ -531,18 +534,19 @@ body, html {
 .about-image img {
     width: 100%;
     border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Add shadow to images */
 }
 
 .left {
     opacity: 0;
     transform: translateX(-100%);
-    transition: opacity 1s, transform 1s;
+    transition: opacity 0.8s ease, transform 0.8s ease; /* Faster animation */
 }
 
 .right {
     opacity: 0;
     transform: translateX(100%);
-    transition: opacity 1s, transform 1s;
+    transition: opacity 0.8s ease, transform 0.8s ease; /* Faster animation */
 }
 
 .about-content.show .left,
@@ -551,6 +555,29 @@ body, html {
     transform: translateX(0);
 }
 
+/* Responsive Design */
+@media (max-width: 768px) {
+    #about h2 {
+        font-size: 2rem;
+    }
+
+    #about h3 {
+        font-size: 1.8rem;
+    }
+
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about-text,
+    .about-image {
+        padding: 1rem;
+    }
+
+    .about-image img {
+        margin-bottom: 1.5rem; /* Add space between image and text */
+    }
+}
 
 
 
@@ -567,41 +594,91 @@ body, html {
 
 #connect h2 {
     font-size: 2.5rem;
-    color: #333;
     margin-bottom: 2rem;
     text-align: center;
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient text */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
-#connect h3 {
-    font-size: 2rem;
-    color: #007BFF;
+/* 3 Simple Steps */
+.steps-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.step {
+    flex: 1;
+    text-align: center;
+    padding: 1.5rem;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.step:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.step-icon {
+    font-size: 2.5rem;
+    color: #6a11cb;
     margin-bottom: 1rem;
+    transition: color 0.3s ease;
 }
 
-#connect p {
+.step:hover .step-icon {
+    color: #2575fc;
+}
+
+.step h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.step p {
     font-size: 1rem;
-    color: #666;
+    color: #555;
     line-height: 1.6;
 }
 
-/* Let's Connect & Grow Section - Image */
-.connect-image img {
-    width: 80%; /* Reduce the width to 80% of its container */
-    max-width: 800px; /* Set a maximum width for the image */
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 0 auto; /* Center the image horizontally */
-    display: block; /* Ensure the image is treated as a block element */
+/* What Happens Section */
+#connect h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient text */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
-/* Let's Connect & Grow Section - What Happens Part */
-#connect .col-md-6:first-child {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Center vertically */
-    align-items: flex-start; /* Align text to the left */
+#connect ul {
+    list-style: none;
+    padding: 0;
 }
 
+#connect ul li {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    color: #555;
+}
+
+#connect ul li::before {
+    content: "•";
+    color: #6a11cb;
+    font-weight: bold;
+    display: inline-block;
+    width: 1rem;
+    margin-left: -1rem;
+}
+
+/* Form Section */
 .form-label {
     font-weight: bold;
     color: #333;
@@ -615,21 +692,55 @@ body, html {
 }
 
 .form-control:focus {
-    border-color: #007BFF;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    border-color: #6a11cb;
+    box-shadow: 0 0 5px rgba(106, 17, 203, 0.5);
 }
 
 .btn-primary {
-    background-color: #007BFF;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
     border: none;
     padding: 0.5rem 1rem;
     font-size: 1rem;
-    transition: background-color 0.3s ease;
+    color: white;
+    transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .btn-primary:hover {
-    background-color: #0056b3;
+    background: linear-gradient(135deg, #2575fc, #6a11cb);
+    transform: translateY(-3px);
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .steps-container {
+        flex-direction: column;
+    }
+
+    .step {
+        margin-bottom: 1.5rem;
+    }
+
+    #connect h2 {
+        font-size: 2rem;
+    }
+
+    #connect h3 {
+        font-size: 1.8rem;
+    }
+
+    .step h3 {
+        font-size: 1.2rem;
+    }
+
+    .step p {
+        font-size: 0.9rem;
+    }
+}
+
+
+
+
+
 
 
 
@@ -662,7 +773,7 @@ body, html {
 }
 
 .footer ul li a:hover {
-    color: #007BFF;
+    color: #6a11cb; /* Gradient color for hover */
 }
 
 /* Social Media Icons */
@@ -674,7 +785,7 @@ body, html {
 }
 
 .social-media .social-icon:hover {
-    color: #007BFF;
+    color: #6a11cb; /* Gradient color for hover */
     transform: translateY(-5px);
 }
 
@@ -683,13 +794,13 @@ body, html {
     color: #fff;
     text-decoration: none;
     padding: 0.5rem 1rem;
-    background-color: #007BFF;
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient button */
     border-radius: 4px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .back-to-top:hover {
-    background-color: #0056b3;
+    background: linear-gradient(135deg, #2575fc, #6a11cb); /* Reverse gradient on hover */
     transform: translateY(-3px);
 }
 
@@ -704,52 +815,4 @@ body, html {
     margin: 0;
     color: #ddd;
     font-size: 0.9rem;
-}
-/* Responsive Styles */
-@media (max-width: 768px) {
-    /* .navbar {
-        flex-direction: row;
-        align-items: center;
-    }
-
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background-color: #333;
-        position: absolute;
-        top: 100%;
-        left: 0;
-    }
-
-    .nav-links.active {
-        display: flex;
-    } */
-
-    .hamburger {
-        display: block;
-    }
-
-    .hero {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .hero-content {
-        max-width: 100%;
-    }
-
-    .expertise-card {
-        width: 100%;
-        height: auto;
-        margin: 8px 0;
-    }
-
-    .about-content {
-        flex-direction: column;
-    }
-
-    .about-text, .about-image {
-        padding: 1rem;
-    }
 }

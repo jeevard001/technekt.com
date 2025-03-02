@@ -1,5 +1,7 @@
 // Scroll Animation for Sections
 const scrollSections = document.querySelectorAll('.scroll-section');
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("nav-links");
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -13,25 +15,22 @@ scrollSections.forEach(section => {
   observer.observe(section);
 });
 
-// Add hover effect for flipping
-const techCards = document.querySelectorAll('.tech-card');
+// Hamburger toggle for mobile menu
+hamburger.addEventListener("click", (e) => {
+  e.stopPropagation();
+  navLinks.classList.toggle("active");
+});
 
-techCards.forEach(card => {
-    let isFlipped = false;
+// Close navbar when clicking outside
+document.addEventListener("click", (e) => {
+  if (!e.target.closest(".navbar")) {
+    navLinks.classList.remove("active");
+  }
+});
 
-    card.addEventListener('mouseenter', () => {
-        if (!isFlipped) {
-            card.classList.add('flipped');
-            isFlipped = true;
-        }
-    });
-
-    card.addEventListener('mouseleave', () => {
-        setTimeout(() => {
-            if (isFlipped) {
-                card.classList.remove('flipped');
-                isFlipped = false;
-            }
-        }, 500); // Delay to make it more practical
-    });
+// Close navbar when a link is clicked
+navLinks.addEventListener("click", (e) => {
+  if (e.target.tagName === "A") {
+    navLinks.classList.remove("active");
+  }
 });

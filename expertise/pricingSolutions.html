@@ -9,18 +9,28 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+
+
+
   <!-- Navbar -->
   <nav class="navbar">
-    <div class="container">
-      <a href="#" class="logo">MyWebsite</a>
-      <ul class="nav-links">
-        <li><a href="D:/technekt-website/index.html">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
+    <div class="brand">
+      <a href="/index.html">
+        <img src="/images/logoedited.png" alt="Company Logo" class="logo-img">
+    </a>
     </div>
+    <div class="hamburger" id="hamburger">
+      <i class="fas fa-bars"></i>
+    </div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="#implementation">Pricefx Implementation</a></li>
+      <li><a href="#proof-of-concept">Pricing Proof of Concept</a></li>
+      <li><a href="#fit-to-standard">Pricefx Fit-To-Standard Analysis</a></li>
+      <li><a href="/index.html#connect" class="nav-connect-btn">Let's Connect</a></li>
+    </ul>
   </nav>
+
 
   <!-- Banner Section -->
   <header class="page-banner">
@@ -41,7 +51,7 @@
           <li>Seamless integration with existing systems.</li>
           <li>Expert guidance and support throughout the process.</li>
         </ul>
-        <a href="#" class="cta-button">Learn More</a>
+        <a href="/index.html#connect" class="cta-button">Learn More</a>
       </div>
       <div class="image-container">
         <img src="../images/office.jpg" alt="Pricefx Implementation">
@@ -63,7 +73,7 @@
           <li>Real-world use cases and scenarios.</li>
           <li>Quick validation of pricing strategies.</li>
         </ul>
-        <a href="#" class="cta-button">Learn More</a>
+        <a href="/index.html#connect" class="cta-button">Learn More</a>
       </div>
     </div>
   </section>
@@ -79,7 +89,7 @@
           <li>Alignment with Pricefx’s best practices.</li>
           <li>Custom recommendations for optimal results.</li>
         </ul>
-        <a href="#" class="cta-button">Learn More</a>
+        <a href="/index.html#connect" class="cta-button">Learn More</a>
       </div>
       <div class="image-container">
         <img src="../images/office.jpg" alt="Fit-To-Standard Analysis">
@@ -87,10 +97,57 @@
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="footer">
+   <!-- Footer -->
+   <footer class="footer" id="footer">
     <div class="container">
-      <p>&copy; 2025 MyWebsite. All rights reserved.</p>
+      <!-- First Column: Company Name and Navbar Contents -->
+      <div class="footer-column">
+        <h5>B&J's Company</h5>
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/index.html#about">About Us</a></li>
+          <li><a href="/index.html#connect">Let's Connect</a></li>
+          <li><a href="/expertise/softwareDev.html">Software Development</a></li>
+          <li><a href="/expertise/ourServices.html">IT Services</a></li>
+          <li><a href="/expertise/pricingSolutions.html">Pricing Solutions</a></li>
+          <li><a href="/expertise/eaas.html">Execution & Managed Services</a></li>
+        </ul>
+      </div>
+  
+      <!-- Second Column: Locations -->
+      <div class="footer-column">
+        <h5>We Operate In</h5>
+        <ul>
+          <li>Europe</li>
+          <li>Germany</li>
+          <li>India</li>
+        </ul>
+      </div>
+  
+      <!-- Third Column: Careers and Queries -->
+      <div class="footer-column">
+        <h5>Careers & Queries</h5>
+        <ul>
+          <li><a href="#careers">Careers</a></li>
+          <li><a href="mailto:email@email.com">email@email.com</a></li>
+        </ul>
+      </div>
+  
+      <!-- Fourth Column: Social Media -->
+      <div class="footer-column">
+        <h5>Follow Us</h5>
+        <ul class="social-media">
+          <li><a href="#" class="social-icon"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="#" class="social-icon"><i class="fab fa-facebook"></i></a></li>
+          <li><a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a></li>
+          <li><a href="#" class="social-icon"><i class="fab fa-instagram"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  
+    <!-- Copyright Notice -->
+    <div class="text-center">
+      <p>Copyright © 2025 B&J. All Rights Reserved.</p>
     </div>
   </footer>
 

@@ -97,6 +97,8 @@ navLinks.addEventListener("click", (e) => {
         });
     }
 
+
+    
     // Initial scroll check and event listener for scroll
     window.addEventListener("scroll", checkScroll);
     checkScroll();

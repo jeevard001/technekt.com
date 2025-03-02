@@ -6,20 +6,33 @@
   <title>Software Development</title>
   <link rel="stylesheet" href="softwareDev.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="container">
-      <a href="#" class="logo">MyWebsite</a>
-      <ul class="nav-links">
-        <li><a href="D:/technekt-website/index.html">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
+
+
+
+   <!-- Navbar -->  
+   <nav class="navbar">
+    <div class="brand">
+      <a href="/index.html">
+        <img src="/images/logoedited.png" alt="Company Logo" class="logo-img">
+    </a>
     </div>
+    <div class="hamburger" id="hamburger">
+      <i class="fas fa-bars"></i>
+    </div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="#web">Web App Development</a></li>
+      <li><a href="#mobile-app">Mobile App Development</a></li>
+      <li><a href="#technologies">Technologies</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="/index.html#connect" class="nav-connect-btn">Let's Connect</a></li>
+    </ul>
   </nav>
+
+
 
   <!-- Page Banner -->
   <header class="page-banner">
@@ -30,7 +43,7 @@
   </header>
 
   <!-- Web App Development Section -->
-<section class="scroll-section web-app-section">
+<section class="scroll-section web-app-section" id="web">
   <div class="container">
     <div class="content">
       <h2>Web App Development</h2>
@@ -40,7 +53,7 @@
         <li>User-friendly interfaces crafted with modern design principles to ensure an intuitive and enjoyable experience.</li>
         <li>Seamless integration with third-party services, APIs, and tools to enhance functionality and streamline operations.</li>
       </ul>
-      <a href="#" class="cta-button">Learn More</a>
+      <a href="/index.html#connect" class="cta-button">Learn More</a>
     </div>
     <div class="image-container">
       <img src="../images/office.jpg" alt="Web App Development" class="slide-in-right">
@@ -49,7 +62,7 @@
 </section>
 
 <!-- App Development Section -->
-<section class="scroll-section app-dev-section">
+<section class="scroll-section app-dev-section"id="mobile-app">
   <div class="container">
     <div class="image-container">
       <img src="../images/office.jpg" alt="App Development" class="slide-in-left">
@@ -62,101 +75,117 @@
         <li>Seamless user experience with intuitive navigation, fast load times, and engaging interactions.</li>
         <li>Regular updates and maintenance to keep your app running smoothly and securely over time.</li>
       </ul>
-      <a href="#" class="cta-button">Learn More</a>
+      <a href="/index.html#connect" class="cta-button">Learn More</a>
     </div>
   </div>
 </section>
 
   <!-- Technologies Banner -->
-  <section class="tech-banner">
+  <section class="tech-banner" id="technologies">
     <div class="container">
       <h2>Technologies We Use</h2>
       <p>Cutting-edge tools and frameworks for modern solutions.</p>
     </div>
   </section>
 
-  <!-- Technologies Section -->
-  <section class="tech-section">
-    <div class="container">
-      <div class="tech-cards">
-        <div class="tech-card">
-          <div class="front">
-            <h3>Ruby on Rails</h3>
-          </div>
-          <div class="back">
-            <h3>Ruby on Rails</h3>
-            <p>A server-side web application framework written in Ruby.</p>
-          </div>
+ <!-- Technologies Section -->
+<section class="tech-section">
+  <div class="container">
+    <div class="tech-cards">
+      <!-- Ruby on Rails -->
+      <div class="tech-card">
+        <div class="front">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/rubyonrails.svg" alt="Ruby on Rails Icon">
+          <h3>Ruby on Rails</h3>
         </div>
-        <div class="tech-card">
-          <div class="front">
-            <h3>React</h3>
-          </div>
-          <div class="back">
-            <h3>React</h3>
-            <p>A JavaScript library for building user interfaces.</p>
-          </div>
+        <div class="back">
+          <h3>Ruby on Rails</h3>
+          <p>A server-side web application framework written in Ruby.</p>
         </div>
-        <div class="tech-card">
-          <div class="front">
-            <h3>Node.js</h3>
-          </div>
-          <div class="back">
-            <h3>Node.js</h3>
-            <p>A JavaScript runtime built on Chrome's V8 engine.</p>
-          </div>
+      </div>
+      <!-- PHP on Laravel -->
+      <div class="tech-card">
+        <div class="front">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/laravel.svg" alt="Laravel Icon">
+          <h3>PHP on Laravel</h3>
         </div>
-        <div class="tech-card">
-          <div class="front">
-            <h3>Django</h3>
-          </div>
-          <div class="back">
-            <h3>Django</h3>
-            <p>A high-level Python web framework.</p>
-          </div>
+        <div class="back">
+          <h3>PHP on Laravel</h3>
+          <p>A PHP framework for web artisans.</p>
         </div>
-        <div class="tech-card">
-          <div class="front">
-            <h3>Flutter</h3>
-          </div>
-          <div class="back">
-            <h3>Flutter</h3>
-            <p>Google's UI toolkit for building natively compiled applications.</p>
-          </div>
+      </div>
+      <!-- Android -->
+      <div class="tech-card">
+        <div class="front">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/android.svg" alt="Android Icon">
+          <h3>Android</h3>
         </div>
-        <div class="tech-card">
-          <div class="front">
-            <h3>Angular</h3>
-          </div>
-          <div class="back">
-            <h3>Angular</h3>
-            <p>A platform for building mobile and desktop web applications.</p>
-          </div>
+        <div class="back">
+          <h3>Android</h3>
+          <p>Google's mobile operating system for building native apps.</p>
         </div>
-        <div class="tech-card">
-          <div class="front">
-            <h3>Laravel</h3>
-          </div>
-          <div class="back">
-            <h3>Laravel</h3>
-            <p>A PHP framework for web artisans.</p>
-          </div>
+      </div>
+      <!-- iOS -->
+      <div class="tech-card">
+        <div class="front">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/apple.svg" alt="iOS Icon">
+          <h3>iOS</h3>
         </div>
-        <div class="tech-card">
-          <div class="front">
-            <h3>Vue.js</h3>
-          </div>
-          <div class="back">
-            <h3>Vue.js</h3>
-            <p>A progressive JavaScript framework.</p>
-          </div>
+        <div class="back">
+          <h3>iOS</h3>
+          <p>Apple's mobile operating system for building native apps.</p>
+        </div>
+      </div>
+      <!-- Flutter -->
+      <div class="tech-card">
+        <div class="front">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/flutter.svg" alt="Flutter Icon">
+          <h3>Flutter</h3>
+        </div>
+        <div class="back">
+          <h3>Flutter</h3>
+          <p>Google's UI toolkit for building natively compiled applications.</p>
+        </div>
+      </div>
+      <!-- Python -->
+      <div class="tech-card">
+        <div class="front">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/python.svg" alt="Python Icon">
+          <h3>Python</h3>
+        </div>
+        <div class="back">
+          <h3>Python</h3>
+          <p>A high-level programming language for general-purpose programming.</p>
+        </div>
+      </div>
+      <!-- Reactjs -->
+      <div class="tech-card">
+        <div class="front">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/react.svg" alt="React Icon">
+          <h3>Reactjs</h3>
+        </div>
+        <div class="back">
+          <h3>Reactjs</h3>
+          <p>A JavaScript library for building user interfaces.</p>
+        </div>
+      </div>
+      <!-- Power BI -->
+      <div class="tech-card">
+        <div class="front">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/powerbi.svg" alt="Power BI Icon">
+          <h3>Power BI</h3>
+        </div>
+        <div class="back">
+          <h3>Power BI</h3>
+          <p>Microsoft's business analytics service for data visualization.</p>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- Pricing Banner -->
-  <section class="pricing-banner">
+  <section class="pricing-banner" id="pricing">
     <div class="container">
       <h2>Flexible Pricing Plans</h2>
       <p>Choose a plan that fits your business needs.</p>
@@ -180,7 +209,7 @@
             </div>
           </div>
           <div class="card-footer">
-            <a href="#" class="cta-button">Get Started</a>
+            <a href="/index.html#connect" class="cta-button">Get Started</a>
           </div>
         </div>
         <div class="card">
@@ -196,7 +225,7 @@
             </div>
           </div>
           <div class="card-footer">
-            <a href="#" class="cta-button">Get Started</a>
+            <a href="/index.html#connect" class="cta-button">Get Started</a>
           </div>
         </div>
         <div class="card">
@@ -212,7 +241,7 @@
             </div>
           </div>
           <div class="card-footer">
-            <a href="#" class="cta-button">Get Started</a>
+            <a href="/index.html#connect" class="cta-button">Get Started</a>
           </div>
         </div>
       </div>
@@ -222,7 +251,54 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <p>&copy; 2025 Software Development. All rights reserved.</p>
+      <!-- First Column: Company Name and Navbar Contents -->
+      <div class="footer-column">
+        <h5>B&J's Company</h5>
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/index.html#about">About Us</a></li>
+          <li><a href="/index.html#connect">Let's Connect</a></li>
+          <li><a href="/expertise/softwareDev.html">Software Development</a></li>
+          <li><a href="/expertise/ourServices.html">IT Services</a></li>
+          <li><a href="/expertise/pricingSolutions.html">Pricing Solutions</a></li>
+          <li><a href="/expertise/eaas.html">Execution & Managed Services</a></li>
+        </ul>
+      </div>
+  
+      <!-- Second Column: Locations -->
+      <div class="footer-column">
+        <h5>We Operate In</h5>
+        <ul>
+          <li>Europe</li>
+          <li>Germany</li>
+          <li>India</li>
+        </ul>
+      </div>
+  
+      <!-- Third Column: Careers and Queries -->
+      <div class="footer-column">
+        <h5>Careers & Queries</h5>
+        <ul>
+          <li><a href="#careers">Careers</a></li>
+          <li><a href="mailto:email@email.com">email@email.com</a></li>
+        </ul>
+      </div>
+  
+      <!-- Fourth Column: Social Media -->
+      <div class="footer-column">
+        <h5>Follow Us</h5>
+        <ul class="social-media">
+          <li><a href="#" class="social-icon"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="#" class="social-icon"><i class="fab fa-facebook"></i></a></li>
+          <li><a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a></li>
+          <li><a href="#" class="social-icon"><i class="fab fa-instagram"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  
+    <!-- Copyright Notice -->
+    <div class="text-center">
+      <p>Copyright © 2025 B&J. All Rights Reserved.</p>
     </div>
   </footer>
 
